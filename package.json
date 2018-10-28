@@ -6,6 +6,8 @@
   "scripts": {
     "build": "NODE_ENV=prod webpack",
     "start": "NODE_ENV=dev webpack-dev-server",
+    "start:context": "STACK=context NODE_ENV=dev webpack-dev-server",
+    "start:redux": "STACK=redux NODE_ENV=dev webpack-dev-server",
     "start:test": "NODE_ENV=test webpack-dev-server",
     "test": "jest",
     "test:update": "jest --updateSnapshot",

@@ -9,6 +9,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'dev';
+const STACK_ENV = process.env.STACK ? process.env.STACK.toLowerCase() : 'context';
 const PORT = process.env.PORT || 3000;
 
 // eslint-disable-next-line
@@ -32,7 +33,7 @@ const distDirectory = path.join(__dirname, 'dist');
 
 const WebpackConfig = {
   mode: NODE_ENV === 'prod' ? 'production' : 'development',
-  entry: './src/index.js',
+  entry: `./src/${STACK_ENV}/index.js`,
   output: {
     path: distDirectory,
     filename: 'app.min.js',
